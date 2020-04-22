@@ -1,0 +1,1 @@
+# Ses-Ile-Acilip-Kapanan-Lamba
