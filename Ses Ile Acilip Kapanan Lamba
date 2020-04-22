@@ -1,0 +1,36 @@
+const int sensor = A0;
+int deger;
+const int led = 5;
+boolean yanmadurumu = false;
+const int esik = 999;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+
+}
+
+void loop()
+{
+  deger = analogRead(sensor);
+  Serial.println(deger);
+  delay(10);
+
+  if (deger > esik)
+  {
+    if (!yanmadurumu)
+    {
+      yanmadurumu = true;
+      digitalWrite (led, HIGH); // led yanar.
+      //lightState=false ise yapılacak işlemler.
+    }
+
+
+
+    else if (yanmadurumu) { //lightState=true ise yapılacak işlemler
+      yanmadurumu = false;
+      digitalWrite (led, LOW); //led söner
+    }
+  }
+}
